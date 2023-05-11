@@ -1,0 +1,1095 @@
+/* Reset  */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* root variable */
+
+:root {
+    --color: #824ccf;
+    --color-primary-light: #6012be;
+    --color-primary-dark: #320071;
+    --color-secondary: #e424ab;
+    --color-navbar: #f8f8f8;
+    --color-button: #e10454;
+    --color-body: #333333;
+    --color-heading: #141017;
+    --color-white: #fff;
+  }
+  body{
+    line-height: 1.6;
+    background-color: #f8f8f8;
+  }
+
+  @font-face {
+    font-family:"IRyekan";
+    font-weight: 400;
+    font-style:normal;
+    src: url("/fonts/IRYekan.woff") format("woff");
+}
+
+body,
+button{
+    font-family: "IRyekan";
+    font-size: 0.8rem;
+}
+input{
+  font-family: "BkoodakBold";
+}
+
+
+
+  /* BUTTON*/
+  .btn__section{
+    max-width: 500px;
+    position: fixed;
+  }
+
+  .btn{
+    cursor: pointer;
+    outline: none;
+    border: none;
+    padding: 1rem 1.25rem;
+    border-radius: 100px;
+    margin: 2rem 1rem ;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 1.2rem;
+  
+  }
+
+  .btn--primary{
+    background-color: var(--color);
+    color: white;
+    
+  }
+
+.btn--secondary{
+  background-color: white  ;
+  color: var(--color);
+  border: 3px solid var(--color);
+}
+
+
+
+
+
+  /* Navbar*/
+  .main-header {
+    width: 90% ;
+    margin: 4rem auto;
+    max-width: 1550px;
+    border-radius: 4rem;
+    box-shadow: 0 0 20px #c1bdbd  ;
+    backdrop-filter: blur(40px);
+  }
+
+  .nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 1rem 2rem;
+  }
+
+  .nav__list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.1rem;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.4s ease-out;
+    font-family: "BMorvarid";
+    font-size: 1rem;
+
+  }
+  .nav.nav__expanded .nav__list{
+    max-height: 100vh;
+    opacity: 1;
+  }
+  .image{
+    width: 180px;
+    height: auto;
+  }
+  .nav__item{
+    margin-bottom: 1.5rem;
+
+  }
+  .nav__item > a:hover {
+    color: blueviolet ;
+
+  }
+
+  .nav__item > a {
+    text-decoration: none;
+    color: var(--color-body) ;
+    display: block;
+    padding-bottom: 2rem ;
+    font-size: 0.8rem;
+  }
+  @media screen and (min-width:1085px) {
+    .nav__item >a{
+      font-size: 1.2rem;
+    }
+  }
+
+
+
+@media screen and (min-width:1040px) {
+  
+    .nav{
+        padding: 0 5rem ;
+    }
+    .nav__toggler{
+        display: none ;
+    }
+    .nav__list {
+        flex-direction: row;
+        align-items: center;
+        width: auto;
+        opacity: 1;
+        max-height: 100% ;
+        margin-top: 0;
+    }
+    .nav__item{
+        margin-right: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 0;
+        align-items: center;
+        font-size: 1rem;
+    }
+    .nav__item > a:hover {
+        color: blueviolet;
+    }
+
+}
+
+/* toggler*/
+.nav__toggler {
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #000 ;
+    margin: 5px;
+    border-radius: 5px ;
+    transition: all 0.4s ease-out ;
+}
+
+
+.nav.nav__expanded .bar-one{
+    transform: rotate(-45deg) translate(-9px , 3px);
+}
+
+.nav.nav__expanded .bar-two{
+    opacity: 0;
+}
+
+.nav.nav__expanded .bar-three{
+    transform: rotate(45deg) translate(-8px , -3px);
+}
+
+
+/*FEATURE*/
+
+.feature{
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  margin: 3rem auto;
+  max-width: 700px;
+}
+.feature__title{
+  margin-right: 2rem;
+  margin-top: 4rem;
+  color: #6012be;
+}
+.feature__text{
+  margin-bottom: 3rem;
+  width: 30rem;
+  display: flex;
+  padding: 2rem;
+  font-family: "BKoodakBold";
+  font-size: 1rem;
+
+}
+.feature__image{
+  margin-bottom: 2.5rem;
+  width: 60%;
+  display: flex;
+}
+
+@media screen and (min-width: 1024px) {
+  .feature{
+    grid-template-columns: repeat(2,1fr) ;
+    margin: 3rem auto;
+    max-width: 1400px;
+
+  }
+  .feature__image{
+    width: 50%;
+    height:auto ;
+    order: 2 ;
+  
+  }
+  .feature__detail{
+    order: 1;
+  }
+}
+
+h2{
+  margin-bottom: 1.5rem;
+}
+
+.hero-section {
+  width: 100%;
+  height: 5px;
+  max-width: 1550px;
+  margin: 0 auto;
+}
+
+.hero-section img{
+  width: 100%;
+}
+/*Contact Us*/
+
+.contact-us{
+  display: grid;
+  text-align: center;
+  justify-content: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+.contact-us__image{
+  margin: 0 10%;
+  max-width: 600px;
+
+}
+.ab {
+  padding: 2.2rem;
+}
+.num{
+  padding: 1rem 6rem;
+  border: 1px solid blueviolet;
+  border-radius: 25px;
+  outline: none;
+  box-shadow: 0 0 5px blueviolet;
+}
+.btn__primary{
+  padding: 0.5rem 3rem ;
+  background-color: #e424ab;
+}
+.btn__primary:hover{
+  background-color: #824ccf;
+  transition: all 0.5s ease-out;
+
+}
+.contact-us__text2{
+  margin-bottom: 3rem;
+}
+
+.contact-us__moshavere{
+  color: #6012be;
+  font-weight: 700;
+  font-size: 2rem;
+  font-family: "SH.Blabeloo_p30download.com";
+}
+.contact-us__image{
+  margin-top: 1rem;
+}
+
+@media screen and (min-width:1024px){
+  .contact-us{
+    grid-template-areas:
+    "image moshavere "
+    "image text1 "
+    "image form "
+    "image text2 "
+    "image button " ;
+    grid-template-columns: 40fr 60fr;
+    align-items: center;
+    justify-content: center;
+  }
+  .contact-us__moshavere{
+    grid-area: moshavere;
+  }
+  .contact-us__text1{
+    grid-area: text1;
+    padding-left:8rem  ;
+    padding-right: 8rem ;
+  }
+  .contact-us__form{
+    grid-area: form;
+  }
+  .contact-us__text2{
+    grid-area: text2;
+  }
+  .contact-us__button{
+    grid-area: button;
+  }
+  .contact-us__image{
+    grid-area: image;
+    margin: 0;
+  }
+  .section1{
+    margin-top:14rem;
+  }
+
+}
+.link{
+  text-decoration: none;
+  border: 1px solid none ;
+  background-color: #824ccf;
+  padding: 1rem 3rem ;
+  border-radius: 25px;
+  color: white;
+}
+.section1{
+  background-color: #f8f8f8;
+  margin-bottom: 5rem;
+}
+.image{
+  border-radius: 55rem;
+}
+a{
+  font-size: 0.9rem;
+}
+.btn{
+  font-size: 0.9rem;
+}
+
+.vid{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+video{
+  width: 90%;
+  height: auto;
+  border-radius: 35px;
+  margin: 0.1% 2.5%;
+}
+@media screen and (min-width:768px) {
+  .vid{
+    flex-direction: row;
+  }
+  
+}
+.mid{
+  padding: 4rem 3rem;
+  color: #6012be;
+}
+
+.nemone1{
+  display: flex;
+  flex-direction: column;
+ text-align: center;
+ font-family: "BKoodakBold";
+ font-size: 1rem;
+}
+
+.nemone1 a{
+  text-decoration: none;
+  margin: 3rem;
+  border-bottom: 4px solid blueviolet;
+  padding: 1rem;
+  font-size: 2rem;
+  font-family: "SH.Blabeloo_p30download.com";
+}
+.nemone1 p{
+  padding: 2rem;
+}
+
+/*Plan*/
+
+.block-plan{
+  display: grid;
+  gap: 2rem 2rem;
+  max-width: 1200px;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit,minmax(300px,375px));
+  margin: 0 auto;
+}
+.plan{
+  max-width: 700px;
+  padding:1rem 2rem ;
+  margin: 0 auto;
+  font-family: "BMorvarid";
+  font-size: 1rem;
+}
+
+.plan:hover{
+  transform: scale(1.05);
+  transition: all 0.3S ease-out;
+}
+
+.card{
+  border-radius: 40px;
+  padding-bottom: 2rem ;
+  box-shadow: 0 0 20px #c1bdbd  ;
+}
+.card__body,
+.card__header{
+  text-align: center;
+}
+.vakil{
+  width: 100%;
+  height:220px;
+  border-radius: 40px 40px 0 0;
+}
+.card__body p{
+  padding: 2rem;
+  margin-bottom: 1rem;
+}
+
+.abb{
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  font-size:1rem ;
+  font-size: 0.8rem;
+  width: 100%;
+}
+@media screen and (min-width:1024px) {
+
+  .plan{
+    padding:0.5rem;
+  }
+  /*
+  a{
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+  }
+  a::after,
+  a::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e65454;
+    transform: scaleX(0);
+    transition: transform .25s;
+  }
+  a::before{
+    top: -3px;
+    transform-origin: left;
+  
+  }
+  a::after{
+    bottom: -3px;
+    transform-origin: right;
+  }
+  a:hover::before,
+  a:hover::after {
+    transform: scaleX(1);
+  }
+  */
+}
+
+
+.branding{
+  display: grid;
+  gap: 1rem;
+  margin: 8rem auto;
+  max-width: 1140px;
+  
+}
+.btn__branding{
+  width:30rem;
+  margin: 0 auto;
+}
+.branding8{
+  margin: 0 auto;
+  color: #6012be;
+}
+.branding9{
+  margin: 1.5rem 3rem;
+  line-height: 2.5;
+  font-family: "BKoodakBold";
+  font-size: 1rem;
+  font-weight: 700;
+}
+.btn__branding p{
+  background-color: blueviolet;
+  color: #fff;
+  text-align: center;
+  padding: 0.7rem;
+  border-radius: 12px 12px;
+  font-family: "BMorvarid";
+  font-weight: 600;
+}
+.image__branding:hover{
+  transform: scale(0.9);
+  transition: all 0.3S ease-out;
+}
+.image__branding{
+  width: 15rem;
+  height: auto;
+  margin: 0 auto;
+
+}
+
+@media screen and (min-width:1024px){
+  .branding{
+    grid-template-areas:
+    "branding8 branding8 branding8"
+    "branding9 branding9 branding9"
+    "branding1 branding7 branding4"
+    "branding2 branding7 branding5"
+    "branding3 branding7 branding6" ;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto 30px 30px;
+  }
+  .branding1{
+    grid-area: branding1;
+    height: 3rem;
+  }
+  .branding2{
+    grid-area: branding2;
+    background-color: #320071;
+  }
+  .branding3{
+    grid-area: branding3;
+  }
+  .branding4{
+    grid-area: branding4;
+
+  }
+  .branding5{
+    grid-area: branding5;
+  }
+  .branding6{
+    grid-area: branding6;
+    
+
+  }
+  .branding7{
+    grid-area: branding7;
+  }
+  .branding8{
+    grid-area: branding8;
+    margin-top: 2rem;
+  }
+  .branding9{
+    grid-area: branding9;
+  }
+  .br1{
+    margin-top: 3.5rem;
+  }
+  .btn__branding{
+    width: 20rem;
+  }
+  
+}
+
+/* Cont-box*/
+.cont-box{
+  display: grid;
+}
+.cont__div{
+  display: flex;
+  flex-direction: column;
+  height: 23rem ;
+  box-shadow: 0 0 15px #e7e1e1  ;
+  margin: 1.5rem;
+  border-radius: 1.5rem ;
+  max-width: 680px;
+  justify-content: space-between;
+  align-items:center ;
+
+}
+.cont__div img{
+  width: 10rem;
+  height: auto;
+}
+.cont__div img:hover{
+  -webkit-animation: mover 2s infinite  alternate;
+  animation: mover 2s infinite  alternate;
+}
+@-webkit-keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
+}
+.cont__div p{
+  padding: 1.5rem;
+  text-align: justify;
+  line-height:2.2 ;
+  font-family: "BKoodakBold";
+  font-size: 1rem;
+}
+.cont__div h3{
+  padding: 1rem;
+  font-family: "SH.Blabeloo_p30download.com";
+}
+@media screen and (min-width:768px) {
+  .cont-box{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 1rem ;
+    background-color: white;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .cont__div{
+    height: auto;
+    margin: 0.8rem ;
+  }
+  .cont__div img{
+    width: 8rem;
+    height: auto;
+  }
+  
+}
+
+/*section-end*/
+.section__end{
+  display: grid;
+  margin-top: 5rem;
+}
+.section__end p{
+  font-family: "BKoodakBold";
+  font-size: 1rem;
+}
+.section__end h2{
+  margin: 3rem auto;
+  color: #390479;
+  
+}
+.div__end{
+  width: 90%;
+  margin: 1.5rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: justify;
+}
+.section__end img{
+  width: 12rem;
+}
+.section__end h3{
+  margin: 1rem;
+  font-family: "SH.Blabeloo_p30download.com";
+}
+.righti{
+  border-right: 4px solid #e10454;
+  padding: 0.5rem;
+  padding-bottom: 3rem;
+  line-height:2.2 ;
+}
+.lefti{
+  border-left: 4px solid #e10454;
+  padding: 0.5rem;
+  padding-bottom: 3rem;
+  line-height:2.2 ;
+}
+
+
+@media screen and (min-width:768px) {
+  .section__end{
+    display: grid;
+  }
+  .end11{
+    display: grid;
+    grid-template-areas: 
+    "end1 end2"
+    "end1 end3";
+    grid-template-rows: 20px 200px;
+    max-width: 900px;
+  }
+  .end22{
+    display: grid;
+    grid-template-areas: 
+    "end5 end4"
+    "end6 end4";
+    grid-template-rows: 20px 200px;
+    max-width: 900px;
+  }
+  .end33{
+    display: grid;
+    grid-template-areas: 
+    "end7 end8"
+    "end7 end9";
+    grid-template-rows: 20px 200px;
+    max-width: 900px;
+  }
+  .end44{
+    display: grid;
+    grid-template-areas: 
+    "end111 end10"
+    "end12 end10";
+    grid-template-rows: 20px 200px;
+    max-width: 900px;
+  }
+
+  .end1{
+    grid-area: end1;
+    margin-left: 4rem;
+  }
+  .end2{
+    grid-area: end2;
+    margin: 0 auto;
+  }
+  .end3{
+    grid-area: end3;
+  }
+  .end4{
+    grid-area: end4;
+    margin-right: 4rem ;
+  }
+  .end5{
+    grid-area: end5;
+    margin-right: 4rem ;
+  }
+  .end6{
+    grid-area: end6;
+  }
+  .end7{
+    grid-area: end7;
+    margin-left: 4rem;
+  }
+  .end8{
+    grid-area: end8;
+    margin: 0 auto;
+  }
+  .end9{
+    grid-area: end9;
+  }
+  .end10{
+    grid-area: end10;
+    margin-right: 4rem ;
+  }
+  .end111{
+    grid-area: end111;
+    margin-right: 4rem ;
+  }
+  .end12{
+    grid-area: end12;
+  }
+  
+}
+
+/* ICONS */
+.icons{
+  max-width: 700px;
+  display: grid;
+}
+.icons p{
+  font-family: "BMorvarid";
+  font-size: 1rem;
+  color: #6012be;
+  font-weight: 700;
+}
+.icon__header{
+  color: #390479;
+  margin: 0 auto;
+}
+
+.icon{
+  width: 2rem;
+  margin: 0 auto;
+}
+
+.txt{
+  margin: 1rem;
+  color: #390479;
+  font-size: 0.7rem;
+}
+.big__image{
+  width: 20rem;
+  height: auto;
+  margin: 0 auto;
+}
+
+@media screen and (min-width:768px) {
+  .icons{
+    align-items: center;
+    margin: 5rem auto;
+    max-width: 1200px;
+    display: grid;
+    grid-template-areas: 
+    "icon__header icon__header icon__header"
+    "icon1 text__icon1 big__image"
+    "icon2 text__icon2 big__image"
+    "icon3 text__icon3 big__image"
+    "icon4 text__icon4 big__image"
+    "icon5 text__icon5 big__image"
+    "icon6 text__icon6 big__image"
+    "icon7 text__icon7 big__image"
+    "icon8 text__icon8 big__image"
+    ;
+    grid-template-columns: 20px 1fr 1fr;
+  }
+  .icon__header{
+    grid-area: icon__header;
+  }
+  .icon1{
+    grid-area: icon1;
+  }
+  .icon2{
+    grid-area: icon2;
+  }
+  .icon3{
+    grid-area: icon3;
+  }
+  .icon4{
+    grid-area: icon4;
+  }
+  .icon5{
+    grid-area: icon5;
+  }
+  .icon6{
+    grid-area: icon6;
+  }
+  .icon7{
+    grid-area: icon7;
+  }
+  .icon8{
+    grid-area: icon8;
+  }
+  .text__icon1{
+    grid-area: text__icon1;
+  }
+  .text__icon2{
+    grid-area: text__icon2;
+  }
+  .text__icon3{
+    grid-area: text__icon3;
+  }
+  .text__icon4{
+    grid-area: text__icon4;
+  }
+  .text__icon5{
+    grid-area: text__icon5;
+  }
+  .text__icon6{
+    grid-area: text__icon6;
+  }
+  .text__icon7{
+    grid-area: text__icon7;
+  }
+  .text__icon8{
+    grid-area: text__icon8;
+  }
+  .big__image{
+    grid-area: big__image;
+    width: 26rem;
+  }
+}
+
+@media screen and (min-width:1000px) {
+  .big__image{
+    width: 30rem;
+  }
+}
+
+/* Types */
+
+.alltypes{
+  display: grid;
+  margin-bottom:5rem ;
+}
+.types{
+  max-width: 600px;
+  width: 95%;
+  margin: 1rem auto;
+  border-radius:  10px ;
+  overflow: hidden;
+  box-shadow: 0 0 15px #e7e1e1  ;
+  background-color: #000;
+}
+.types__header img{
+  width: 100%;
+  opacity: 0.8;
+}
+.types__header img:hover{
+  opacity: 1;
+  transition: all 0.2s ease-out;
+}
+.types__body {
+  height: 6rem;
+  background: white;
+  margin-top:-0.45rem ;
+}
+.types__body p{
+  width: 100%;
+  text-align: center;
+  padding: 3.5rem 0 ;
+  font-family: "BMorvarid";
+  font-size: 1rem;
+  font-weight: 700;
+}
+.imp__icon img{
+  width: 4rem;
+  border-radius: 100%;
+  margin:0 auto ;
+  z-index: 1px ;
+  transform: translateZ(0);
+}
+
+.imp__icon{
+  width: 4rem;
+  margin: -2.5rem auto;
+  cursor: pointer;
+}
+.imp__icon img:hover{
+  transform: rotate(47deg);
+  transition: all 1s;
+}
+.header__types{
+  justify-content: center;
+  margin-top: 5rem;
+  color: #390479;
+
+  display: flex;
+}
+@media screen and (min-width:768px){
+  .alltypes{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    max-width: 1300px;
+    margin: 2rem auto;
+  }
+  .types{
+    margin: 1rem ;
+  }
+}
+@media screen and (min-width:1024px) {
+  .alltypes{
+    grid-template-columns: repeat(3,1fr);
+  }
+  
+}
+
+/*Footer*/
+.footer--end{
+  max-width: 500px;
+  margin: 2rem auto;
+}
+.footer{
+  margin: 1rem;
+  display: flex;
+  color: #5f6669;
+}
+.footer img{
+  width: 1.5rem;
+  margin: 0 0.5rem;
+}
+.footer a{
+  text-decoration: none;
+  color: #5f6669;
+}
+.footer__box2{
+  display: flex;
+  flex-direction: column;
+  margin: 1rem 0;
+}
+.box2{
+  margin: 1rem 2rem;
+}
+.box2 a,
+.footer__box3 p{
+  text-decoration: none;
+  color: #5f6669;
+}
+.box2 h2 , 
+.footer__box3 h2{
+  color: #6012be;
+}
+.footer__box3{
+  margin: 2rem 2rem;
+  margin-bottom: 2rem ;
+}
+.footer__box3 p {
+  margin: 1rem 0rem;
+}
+.footer__box4{
+  display: flex;
+  flex-direction: column;
+}
+.footer__box4 p{
+  margin: 2rem;
+}
+.footer__box4 form{
+  margin: 0 2rem;
+}
+.footer__box4 .num{
+  margin: 0.5rem 0;
+  display: block;
+  width: 100%;
+  padding: 0.5rem;
+}
+ .footer__box4 .btn{
+  margin-top: -0.1rem;
+  margin-right: -0.15rem;
+  width: 100%;
+  background-color: #e10454;
+ }
+.footer__box4 p{
+  color: #6012be;
+}
+
+@media screen and (min-width:768px){
+  .footer--end{
+    max-width: 1400px;
+    display: grid;
+    grid-template-areas: 
+    "footer__box1 footer__box2 footer__box3 footer__box4";
+  }
+  .footer__box1{
+    grid-area: footer__box1;
+  }
+  .footer__box2{
+    grid-area: footer__box2;
+  }
+  .footer__box3{
+    grid-area: footer__box3;
+  }
+  .footer__box4{
+    grid-area: footer__box4;
+  }
+}
+
+@font-face {
+  font-family:"SH.Blabeloo_p30download.com";
+  font-weight: 400;
+  font-style:normal;
+  src: url("/fonts/SH.Blabeloo_p30download.com.ttf") format("");
+}
+h2,
+button
+{
+  font-family: "SH.Blabeloo_p30download.com";
+  font-size: 2rem;
+}
+
+@font-face {
+  font-family:"BKoodakBold";
+  font-weight: 400;
+  font-style:normal;
+  src: url("/fonts/BKoodakBold.woff") format("woff");
+}
+@font-face {
+  font-family:"BMorvarid";
+  font-weight: 400;
+  font-style:normal;
+  src: url("/fonts/BMorvarid.woff") format("woff");
+}
